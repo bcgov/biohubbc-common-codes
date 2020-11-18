@@ -23,9 +23,6 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 
-//     ALTER SCHEMA ${DB_SCHEMA} OWNER TO ${DB_SCHEMA};
-
-
 /**
  * Drop the `DB_SCHEMA` schema.
  *

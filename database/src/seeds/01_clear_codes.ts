@@ -11,20 +11,11 @@ const results = [];
 
 export async function seed(knex: Knex): Promise<void> {
 
-    // await knex.raw(`
-    //     set schema '${DB_SCHEMA}';
-    //     set search_path = ${DB_SCHEMA}, public;
-    
-    //     DELETE FROM codes.code;
-    //     DELETE FROM codes.code_header;
-    //     DELETE FROM codes.code_category;
-    // `);
+  await knex("code").withSchema(DB_SCHEMA).del();
+  await knex("code_header").withSchema(DB_SCHEMA).del();
+  await knex("code_category").withSchema(DB_SCHEMA).del();
 
-  await knex("code").withSchema('codes').del();
-  await knex("code_header").withSchema('codes').del();
-  await knex("code_category").withSchema('codes').del();
-
-  await knex.raw('alter sequence codes.code_code_id_seq restart with 1');
-  await knex.raw('alter sequence codes.code_header_code_header_id_seq restart with 1');
-  await knex.raw('alter sequence codes.code_category_code_category_id_seq restart with 1');
+  await knex.raw('alter sequence ' + DB_SCHEMA + '.code_code_id_seq restart with 1');
+  await knex.raw('alter sequence ' + DB_SCHEMA + '.code_header_code_header_id_seq restart with 1');
+  await knex.raw('alter sequence ' + DB_SCHEMA + '.code_category_code_category_id_seq restart with 1');
 };

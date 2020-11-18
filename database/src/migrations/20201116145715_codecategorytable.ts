@@ -30,12 +30,11 @@ export async function up(knex: Knex): Promise<void> {
   
       COMMENT ON COLUMN ${DB_SCHEMA}.code_category.valid_to IS 'Validity of this code until this date';
       
-      
     `);
   }
   
   /**
-   * Drop the `code` table.
+   * Drop the `code_category` table.
    *
    * @export
    * @param {Knex} knex

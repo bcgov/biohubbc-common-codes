@@ -36,7 +36,7 @@ async function _load_categories(knex: Knex): Promise<void> {
           created_by_user_id: dataRow.created_by_user_id,
           updated_by_user_id: dataRow.updated_by_user_id
         };
-        console.log(extendedRow);
+        //console.log(extendedRow);
         results.push(extendedRow);
       })
       .on('error', (error) => reject(error))
@@ -74,7 +74,7 @@ async function _load_headers(knex: Knex): Promise<void> {
             created_by_user_id: dataRow.created_by_user_id,
             updated_by_user_id: dataRow.updated_by_user_id
           };
-          console.log(extendedRow);
+          //console.log(extendedRow);
           results.push(extendedRow);
         })
         .on('error', (error) => reject(error))
@@ -112,7 +112,7 @@ async function _load_headers(knex: Knex): Promise<void> {
             created_by_user_id: dataRow.created_by_user_id,
             updated_by_user_id: dataRow.updated_by_user_id
           };
-          console.log(extendedRow);
+          //console.log(extendedRow);
           results.push(extendedRow);
         })
         .on('error', (error) => reject(error))
