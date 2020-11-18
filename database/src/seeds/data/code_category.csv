@@ -1,4 +1,4 @@
-code_category_id, code_category_name, code_category_title,code_category_description, valid_from, valid_to, created_at, updated_at, created_by_user_id, updated_by_user_id
+code_category_id,code_category_name,code_category_title,code_category_description,valid_from,valid_to,created_at,updated_at,created_by_user_id,updated_by_user_id
 1,SPI,SPI Codes,The codes from the SPI System,2020-10-15 14:20:08.32282,,2020-10-15 14:20:08.32282,2020-10-15 14:20:08.32282,1,1
 2,INVASIVESBC,Invasives BC,"Invasive species are non-native plants and animals whose introduction and spread in British Columbia cause significant economic, social or environmental damage. This application tracks the observation, treatment, and monitoring of invasive species in the Province of British Columbia.",2020-10-21 09:40:29.085235,,2020-10-21 09:40:29.085235,2020-10-21 11:21:59.57875,1,1
 3,FISH,FISH Codes,The codes from the FISH System,2020-11-05 16:26:11.056087,,2020-11-05 16:26:11.056087,2020-11-05 16:26:11.056087,1,1

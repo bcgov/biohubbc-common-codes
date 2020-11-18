@@ -1,4 +1,4 @@
-code_header_id, code_category_id, code_header_name, code_header_title, code_header_description, valid_from, valid_to, created_at, updated_at, created_by_user_id, updated_by_user_id
+code_header_id,code_category_id,code_header_name,code_header_title,code_header_description,valid_from,valid_to,created_at,updated_at,created_by_user_id,updated_by_user_id
 1,1,BEU_MODIFIERS,BEU_MODIFIERS,Code from SPI,2020-10-15 14:21:18.906189,,2020-10-15 14:21:18.906189,2020-10-15 14:21:18.906189,1,1
 2,1,BIRD_HEIGHTS,BIRD_HEIGHTS,Code from SPI,2020-10-15 14:21:18.906189,,2020-10-15 14:21:18.906189,2020-10-15 14:21:18.906189,1,1
 3,1,CALL_CLASSES,CALL_CLASSES,Code from SPI,2020-10-15 14:21:18.906189,,2020-10-15 14:21:18.906189,2020-10-15 14:21:18.906189,1,1
