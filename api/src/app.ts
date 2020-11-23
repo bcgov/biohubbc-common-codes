@@ -68,7 +68,7 @@ initialize({
 // Start api
 try {
   app.listen(PORT, () => {
-    defaultLog.info({ label: 'start api', message: `started api on ${HOST}:${PORT}/api` });
+    defaultLog.info({ label: 'start api', message: `started api on ${HOST}:${PORT}` });
   });
 } catch (error) {
   defaultLog.error({ label: 'start api', message: 'error', error });

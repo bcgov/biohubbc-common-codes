@@ -11,6 +11,14 @@
   },
   "servers": [
     {
+      "url": "http://localhost:3002",
+      "description": "local api"
+    },
+    {
+      "url": "http://localhost:7080",
+      "description": "local api via docker"
+    },
+    {
       "url": "https://api-dev-biohubbc-common-codes.pathfinder.gov.bc.ca",
       "description": "deployed api in dev environment"
     },
