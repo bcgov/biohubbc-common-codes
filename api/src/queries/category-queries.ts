@@ -207,12 +207,13 @@ import { CategoryPostRequestBody, CategorySearchCriteria } from './../models/cat
 export const getCategorySQL = (categoryId: string): SQLStatement => {
   return SQL`
     SELECT * FROM codes.code_category
-    WHERE code_category_id = ${categoryId}
+    WHERE code_category_id = ${categoryId} AND (valid_to is null or valid_to > now())
   `;
 };
 
 export const getCategoriesSQL = (): SQLStatement => {
   return SQL`
     SELECT * FROM codes.code_category
+    WHERE (valid_to is null or valid_to > now())
   `;
 };
