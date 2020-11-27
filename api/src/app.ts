@@ -40,16 +40,16 @@ initialize({
     'application/json': bodyParser.json({ limit: '50mb' }),
     'application/x-www-form-urlencoded': bodyParser.urlencoded({ limit: '50mb', extended: true })
   },
-  securityHandlers: {
-    Bearer: function (req, scopes) {
-      // return true // bypass authentication
-      return authenticate(req, scopes);
-    }
-  },
-  securityFilter: async (req, res) => {
-    const updatedReq = await applyApiDocSecurityFilters(req);
-    res.status(200).json(updatedReq['apiDoc']);
-  },
+  // securityHandlers: {
+  //   Bearer: function (req, scopes) {
+  //     // return true // bypass authentication
+  //     return authenticate(req, scopes);
+  //   }
+  // },
+  // securityFilter: async (req, res) => {
+  //   const updatedReq = await applyApiDocSecurityFilters(req);
+  //   res.status(200).json(updatedReq['apiDoc']);
+  // },
   errorTransformer: function (openapiError: object, ajvError: object): object {
     // Transform openapi-request-validator and openapi-response-validator errors
     return ajvError;

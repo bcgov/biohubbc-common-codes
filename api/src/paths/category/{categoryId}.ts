@@ -8,7 +8,7 @@ import { getDBConnection } from './../../database/db';
 import { getCategorySQL } from './../../queries/category-queries';
 import { getLogger } from './../../utils/logger';
 
-const defaultLog = getLogger('category/{categoryId}');
+const defaultLog = getLogger('category/{code_category_id}');
 
 export const GET: Operation = [getCategory(), returnCategory()];
 
@@ -61,9 +61,9 @@ GET.apiDoc = {
  */
 function getCategory(): RequestHandler {
   return async (req, res, next) => {
-    defaultLog.debug({ label: '{categoryId}', message: 'getCategory', body: req.params });
+    defaultLog.debug({ label: '{code_category_id}', message: 'getCategory', body: req.params });
 
-    const categoryId = req.params.categoryId;
+    const code_category_id = req.params.categoryId;
 
     const connection = await getDBConnection();
 
@@ -75,7 +75,7 @@ function getCategory(): RequestHandler {
     }
 
     try {
-      const sqlStatement: SQLStatement = getCategorySQL(categoryId);
+      const sqlStatement: SQLStatement = getCategorySQL(code_category_id);
 
       if (!sqlStatement) {
         throw {

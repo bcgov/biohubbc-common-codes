@@ -140,7 +140,8 @@ function getCategoriesBySearchFilterCriteria(): RequestHandler {
     }
 
     try {
-      const sqlStatement: SQLStatement = getCategoriesSQL(sanitizedSearchCriteria);
+      //const sqlStatement: SQLStatement = getCategoriesSQL(sanitizedSearchCriteria);
+      const sqlStatement: SQLStatement = getCategoriesSQL();
 
       if (!sqlStatement) {
         throw {

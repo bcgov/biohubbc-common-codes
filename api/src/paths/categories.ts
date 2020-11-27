@@ -11,9 +11,9 @@ import { getLogger } from '../utils/logger';
 
 const defaultLog = getLogger('category');
 
-export const POST: Operation = [getCategoriesBySearchFilterCriteria()];
+export const GET: Operation = [getCategoriesBySearchFilterCriteria()];
 
-POST.apiDoc = {
+GET.apiDoc = {
   description: 'Fetches all categories based on search criteria.',
   tags: ['category'],
   security: [
@@ -134,7 +134,8 @@ function getCategoriesBySearchFilterCriteria(): RequestHandler {
     }
 
     try {
-      const sqlStatement: SQLStatement = getCategoriesSQL(sanitizedSearchCriteria);
+      //const sqlStatement: SQLStatement = getCategoriesSQL(sanitizedSearchCriteria);
+      const sqlStatement: SQLStatement = getCategoriesSQL();
 
       if (!sqlStatement) {
         throw {
@@ -156,7 +157,8 @@ function getCategoriesBySearchFilterCriteria(): RequestHandler {
 
       return res.status(200).json(result);
     } catch (error) {
-      defaultLog.debug({ label: 'getCategoriesBySearchFilterCriteria', message: 'error', error });
+      //defaultLog.debug({ label: 'getCategoriesBySearchFilterCriteria', message: 'error', error });
+      defaultLog.debug({ label: 'getCategories', message: 'error', error });
       throw error;
     } finally {
       connection.release();
