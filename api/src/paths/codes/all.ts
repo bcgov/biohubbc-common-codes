@@ -7,7 +7,7 @@ import { getAllCodeEntities } from '../../utils/code-utils';
 
 const defaultLog = getLogger('codes/all');
 
-export const GET: Operation = [allEntities()];
+export const GET: Operation = allEntities();
 
 
 GET.apiDoc = {
