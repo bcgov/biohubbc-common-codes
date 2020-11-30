@@ -5,14 +5,11 @@ import { Operation } from 'express-openapi';
 import { SQLStatement } from 'sql-template-strings';
 import { getDBConnection } from '../../database/db';
 import { getLogger } from '../../utils/logger';
-import { getAllCodeEntities, IAllCodeEntities } from '../../utils/code-utils';
+import { getAllCodeEntities } from '../../utils/code-utils';
 
-const defaultLog = getLogger('category/all');
+const defaultLog = getLogger('codes/all');
 
-console.log('before get all entities');
-
-export const GET: Operation = [all()];
-console.log('after get all entities');
+export const GET: Operation = [allEntities()];
 
 
 GET.apiDoc = {
@@ -51,7 +48,7 @@ GET.apiDoc = {
  * @return {RequestHandler}
  */
 
-function all(): RequestHandler {
+function allEntities(): RequestHandler {
   return async (req, res, next) => {
     return res.status(200).json(await getAllCodeEntities());
   };

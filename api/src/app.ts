@@ -53,7 +53,6 @@ initialize({
   }
 });
 
-console.log('after initializing');
 
 // Start api
 try {

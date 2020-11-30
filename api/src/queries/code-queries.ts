@@ -6,7 +6,7 @@ import { SQL, SQLStatement } from 'sql-template-strings';
  * @returns {SQLStatement} sql query object
  */
 export const getCodeCategoriesSQL = (): SQLStatement =>
-  SQL`SELECT code_category_id, code_category_name FROM code_category WHERE valid_to IS NULL;`;
+  SQL`SELECT code_category_id, code_category_name FROM code_category WHERE (valid_to is null or valid_to > now());`;
 
 /**
  * SQL query to fetch code headers.
@@ -14,7 +14,7 @@ export const getCodeCategoriesSQL = (): SQLStatement =>
  * @returns {SQLStatement} sql query object
  */
 export const getCodeHeadersSQL = (): SQLStatement =>
-  SQL`SELECT code_header_id, code_category_id, code_header_name FROM code_header WHERE valid_to IS NULL;`;
+  SQL`SELECT code_header_id, code_category_id, code_header_name FROM code_header WHERE (valid_to is null or valid_to > now());`;
 
 /**
  * SQL query to fetch codes.
@@ -22,4 +22,4 @@ export const getCodeHeadersSQL = (): SQLStatement =>
  * @returns {SQLStatement} sql query object
  */
 export const getCodesSQL = (): SQLStatement =>
-  SQL`SELECT code_id, code_header_id, code_name, code_description, code_sort_order FROM code WHERE valid_to IS NULL;`;
+  SQL`SELECT code_id, code_header_id, code_name, code_description, code_sort_order FROM code WHERE (valid_to is null or valid_to > now());`;
