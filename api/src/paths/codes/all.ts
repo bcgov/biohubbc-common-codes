@@ -2,8 +2,6 @@
 
 import { RequestHandler } from 'express';
 import { Operation } from 'express-openapi';
-import { SQLStatement } from 'sql-template-strings';
-import { getDBConnection } from '../../database/db';
 import { getLogger } from '../../utils/logger';
 import { getAllCodeEntities } from '../../utils/code-utils';
 
