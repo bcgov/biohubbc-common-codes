@@ -3,9 +3,7 @@
 import { RequestHandler } from 'express';
 import { Operation } from 'express-openapi';
 import { SQLStatement } from 'sql-template-strings';
-import { ALL_ROLES } from './../../constants/misc';
 import { getDBConnection } from './../../database/db';
-import { getCategorySQL } from './../../queries/category-queries';
 import { getLogger } from './../../utils/logger';
 
 const defaultLog = getLogger('category/{code_category_id}');
@@ -15,11 +13,6 @@ export const GET: Operation = [getCategory(), returnCategory()];
 GET.apiDoc = {
   description: 'Fetches a single category based on its primary key.',
   tags: ['category'],
-  security: [
-    {
-      Bearer: ALL_ROLES
-    }
-  ],
   parameters: [
     {
       in: 'path',
@@ -75,20 +68,20 @@ function getCategory(): RequestHandler {
     }
 
     try {
-      const sqlStatement: SQLStatement = getCategorySQL(code_category_id);
+      //const sqlStatement: SQLStatement = getCategorySQL(code_category_id);
 
-      if (!sqlStatement) {
-        throw {
-          status: 400,
-          message: 'Failed to build SQL statement'
-        };
-      }
+      // if (!sqlStatement) {
+      //   throw {
+      //     status: 400,
+      //     message: 'Failed to build SQL statement'
+      //   };
+      // }
 
-      const response = await connection.query(sqlStatement.text, sqlStatement.values);
+      // const response = await connection.query(sqlStatement.text, sqlStatement.values);
 
-      const result = (response && response.rows && response.rows[0]) || null;
+      // const result = (response && response.rows && response.rows[0]) || null;
 
-      req['category'] = result;
+      // req['category'] = result;
     } catch (error) {
       defaultLog.debug({ label: 'getCategory', message: 'error', error });
       throw error;

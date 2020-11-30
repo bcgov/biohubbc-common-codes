@@ -14,6 +14,7 @@ export interface IAllCodeEntities {
 
 export async function getAllCodeEntities(): Promise<IAllCodeEntities> {
   const connection = await getDBConnection();
+  console.log('Inside of the getAllCodeEntities function');
 
   if (!connection) {
     throw {
@@ -24,6 +25,7 @@ export async function getAllCodeEntities(): Promise<IAllCodeEntities> {
 
   try {
     const codeCategoriesSQL: SQLStatement = getCodeCategoriesSQL();
+    console.log('codecategorySQL' + codeCategoriesSQL);
     const codeHeadersSQL: SQLStatement = getCodeHeadersSQL();
     const codesSQL: SQLStatement = getCodesSQL();
 
