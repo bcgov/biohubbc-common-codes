@@ -40,12 +40,6 @@ GET.apiDoc = {
   }
 };
 
-/**
- * TODO: Fetches a single category here? record based on its primary key.
- *
- * @return {RequestHandler}
- */
-
 function allEntities(): RequestHandler {
   return async (req, res, next) => {
     return res.status(200).json(await getAllCodeEntities());
