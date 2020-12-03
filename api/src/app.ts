@@ -3,7 +3,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import { initialize } from 'express-openapi';
-import { applyApiDocSecurityFilters } from './utils/api-doc-security-filter';
 import { authenticate } from './utils/auth-utils';
 import { getLogger } from './utils/logger';
 
