@@ -46,10 +46,6 @@ initialize({
       return authenticate(req, scopes);
     }
   },
-  securityFilter: async (req, res) => {
-    const updatedReq = await applyApiDocSecurityFilters(req);
-    res.status(200).json(updatedReq['apiDoc']);
-  },
   errorTransformer: function (openapiError: object, ajvError: object): object {
     // Transform openapi-request-validator and openapi-response-validator errors
     return ajvError;
