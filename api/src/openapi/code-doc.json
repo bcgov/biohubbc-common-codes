@@ -1,0 +1,33 @@
+{
+  "title": "code",
+  "type": "object",
+  "required": [
+    "code_id",
+    "code_header_id",
+    "code_name",
+    "code_description",
+    "code_sort_order"
+  ],
+  "properties": {
+    "code_id": {
+      "type": "number",
+      "example": 1
+    },
+    "code_header_id": {
+      "type": "number",
+      "example": 1
+    },
+    "code_name": {
+      "type": "string",
+      "example": "AG"
+    },
+    "code_description": {
+      "type": "string",
+      "example": "Angling"
+    },
+    "code_sort_order": {
+      "type": "number",
+      "example": 1
+    }
+  }
+}
