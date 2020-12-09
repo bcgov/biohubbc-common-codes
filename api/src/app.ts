@@ -3,7 +3,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import { initialize } from 'express-openapi';
-import { applyApiDocSecurityFilters } from './utils/api-doc-security-filter';
 import { authenticate } from './utils/auth-utils';
 import { getLogger } from './utils/logger';
 
@@ -45,10 +44,6 @@ initialize({
       // return true // bypass authentication
       return authenticate(req, scopes);
     }
-  },
-  securityFilter: async (req, res) => {
-    const updatedReq = await applyApiDocSecurityFilters(req);
-    res.status(200).json(updatedReq['apiDoc']);
   },
   errorTransformer: function (openapiError: object, ajvError: object): object {
     // Transform openapi-request-validator and openapi-response-validator errors

@@ -1,0 +1,23 @@
+{
+  "title": "header",
+  "type": "object",
+  "required": [
+    "code_header_id",
+    "code_category_id",
+    "code_header_name"
+  ],
+  "properties": {
+    "code_header_id": {
+      "type": "number",
+      "example": 1
+    },
+    "code_category_id": {
+      "type": "number",
+      "example": 1
+    },
+    "code_header_name": {
+      "type": "string",
+      "example": "COLLECTION_METHOD"
+    }
+  }
+}

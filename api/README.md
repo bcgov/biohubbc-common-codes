@@ -30,9 +30,9 @@ See `./Makefile` for all available commands.
 
 ## Calling the API
 
-Access the api directly: `localhost:3002/api/`
+Access the api directly: `localhost:3002/`
 
-Access the api via the nginx reverse proxy: `localhost:80/api/`
+Access the api via the nginx reverse proxy: `localhost:80/`
 
 <br />
 
@@ -56,7 +56,7 @@ npm install
 npm start
 ```
 
-3. Go to http://localhost:3002/api/docs/ to verify that the application is running.
+3. Go to http://localhost:3002/misc/version/ to verify that the application is running.
 
 <br />
 
@@ -64,7 +64,7 @@ npm start
 
 The API is defined in `api-doc.yaml`.
 
-If this project is running locally, you can view the api docs at: `http://localhost:3002/api/docs/` or `http://localhost:7080/api/docs/` if running in Docker.
+If this project is running locally, you can view the api docs at: `http://localhost:3002/api/docs/` or `http://localhost:7080/api/docs/` if running in Docker. -->
 
 This project uses npm package `express-openapi` via `./app.ts` to automatically generate the express server and its routes, based on the contents of the `api-doc.yaml` and the `./src/path/` content.
 
